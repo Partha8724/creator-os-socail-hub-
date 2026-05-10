@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=SF+Pro+Display:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+  
+  --color-dark-bg: #000000;
+  --color-glow-blue: #0A84FF;
+  --color-glow-purple: #BF5AF2;
+  --color-glow-teal: #64D2FF;
+  --color-apple-glass: rgba(255, 255, 255, 0.04);
+  --color-apple-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-[#F5F5F7] selection:bg-glow-blue/30 antialiased overflow-x-hidden;
+    font-feature-settings: "cv01", "cv02", "cv03", "cv04";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .smart-card {
+    background: rgba(28, 28, 30, 0.5);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+  }
+
+  .smart-card:hover {
+    background: rgba(44, 44, 46, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .smart-card-premium {
+    @apply bg-[#1C1C1E] border border-apple-glass-border rounded-[24px] overflow-hidden;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-panel {
+    background: rgba(28, 28, 30, 0.6);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+  }
+
+  .premium-glow-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-[#FFFFFF] to-[#86868B];
+  }
+  
+  .premium-glow-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-glow-blue via-glow-teal to-glow-purple;
+  }
+
+  .hero-text-glow {
+    text-shadow: 0 0 40px rgba(255,255,255,0.4), 0 0 80px rgba(255,255,255,0.2);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-style-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-style-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-style-thin::-webkit-scrollbar-thumb {
+    @apply bg-white/20 rounded-full;
+  }
+
+  .scrollbar-style-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/30;
+  }
+}
+

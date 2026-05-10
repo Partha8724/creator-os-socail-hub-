@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "User's neural tier and synchronization data",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "tier": { "type": "string", "enum": ["Nexus", "Master Node"] },
+        "syncedNodes": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "tier"]
+    },
+    "NeuralAnalysis": {
+      "title": "Neural Analysis",
+      "description": "Results from AI SEO and growth audits",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "type": { "type": "string", "enum": ["video", "post", "keyword"] },
+        "title": { "type": "string" },
+        "status": { "type": "string" },
+        "score": { "type": "number" },
+        "prophecy": { "type": "string" },
+        "resultData": { "type": "object" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "type", "title"]
+    },
+    "QueueItem": {
+      "title": "Queue Item",
+      "description": "Scheduled content nodes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "platform": { "type": "string" },
+        "content": { "type": "string" },
+        "scheduledTime": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" }
+      },
+      "required": ["userId", "platform", "scheduledTime"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User information"
+    },
+    "/analysis/{analysisId}": {
+      "schema": "NeuralAnalysis",
+      "description": "Growth analysis history"
+    },
+    "/queue/{queueId}": {
+      "schema": "QueueItem",
+      "description": "Content scheduling queue"
+    }
+  }
+}
