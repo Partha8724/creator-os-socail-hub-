@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ReplyPro</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            background: #f4f4f9; 
+        }
+        .login-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            width: 100%;
+            max-width: 350px; 
+            text-align: center; 
+        }
+        h2 { color: #2c3e50; }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-sizing: border-box; 
+        }
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            background: #2e7d32; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            font-size: 1rem;
+        }
+        button:hover { background: #1b5e20; }
+        .back-link { display: block; margin-top: 20px; color: #888; text-decoration: none; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h2>Welcome Back</h2>
+        <p style="color: #666; margin-bottom: 20px;">Login to your AI Brain</p>
+        <input type="email" placeholder="Email Address">
+        <input type="password" placeholder="Password">
+        <button onclick="alert('System initializing...')">Sign In</button>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>
