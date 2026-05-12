@@ -58,7 +58,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route element={<SmartShell />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+           <Route path="/dashboard" element={<h1 style={{color:'white'}}>Dashboard Working</h1>} />
             <Route path="/analytics" element={<VidIQAnalytics />} />
             <Route path="/connect" element={<ConnectAccounts />} />
             <Route path="/stream" element={<HubStream />} />
