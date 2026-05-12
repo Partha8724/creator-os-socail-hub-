@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /settings
+Disallow: /api
 
-Sitemap: https://creator-os-socail-hub.vercel.app/sitemap.xml
+Sitemap: https://hubirl.ai/sitemap.xml

@@ -121,30 +121,36 @@ export default function Landing() {
           </motion.div>
 
           <div className="space-y-4 mb-12">
-            <motion.h1
+            <h1 aria-label="HubIRL AI Creator OS: Your Content, Automated & Elevated" className="sr-only">
+              HubIRL AI Creator OS: Your Content, Automated & Elevated
+            </h1>
+            <motion.div
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               className="text-6xl md:text-[9rem] font-black leading-none tracking-tight premium-glow-text"
+              aria-hidden="true"
             >
               YOUR CONTENT.
-            </motion.h1>
-            <motion.h1
+            </motion.div>
+            <motion.div
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
               className="text-6xl md:text-[9rem] font-black leading-none tracking-tight premium-glow-accent hero-text-glow"
+              aria-hidden="true"
             >
               AUTOMATED.
-            </motion.h1>
-            <motion.h1
+            </motion.div>
+            <motion.div
               initial={{ opacity: 0, scale: 1.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
               className="text-6xl md:text-[9rem] font-black leading-none tracking-tight premium-glow-text"
+              aria-hidden="true"
             >
               ELEVATED.
-            </motion.h1>
+            </motion.div>
           </div>
 
           <motion.p
