@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Routes, Route } from 'react-router-dom';
 import SmartShell from './components/layout/SmartShell';
 import Intro from './components/layout/Intro';
@@ -55,6 +56,7 @@ export default function App() {
   return (
     <UserProvider>
       <NotificationProvider>
+        <Analytics />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route element={<SmartShell />}>
